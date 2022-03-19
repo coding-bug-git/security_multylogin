@@ -45,6 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(ddAuthenticationProvider);
         auth.authenticationProvider(usernamePasswordAuthenticationProvider);
+
     }
 
     @Bean
@@ -64,6 +65,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //关闭csrf
                 .cors().disable()
                 .csrf().disable()
+                .formLogin().disable()
                 //不通过Session获取SecurityContext
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)

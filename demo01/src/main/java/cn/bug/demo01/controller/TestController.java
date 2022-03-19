@@ -46,7 +46,7 @@ public class TestController {
         if (Objects.isNull(authenticate)) {
             throw new RuntimeException("验证失败!");
         }
-        return authenticate.getPrincipal();
+        return authenticate;
     }
 
 }

@@ -24,7 +24,8 @@ public class FakeUserList {
     );
 
     public static User getUserByDingId(String dingId) {
-        List<User> list = ddLoginUserList.stream().filter(user -> dingId.equals(user.getDingId())).collect(Collectors.toList());
+        List<User> list = ddLoginUserList.stream().filter(
+                user -> dingId.equals(user.getDingId())).collect(Collectors.toList());
         return list.get(0);
     }
 
